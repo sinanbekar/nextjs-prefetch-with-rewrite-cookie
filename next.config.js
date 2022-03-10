@@ -1,9 +1,8 @@
-const rewriteRoutes = [
-  '/with-rewrite',
-  '/with-rewrite/:slug'
-]
+const rewriteRoutes = ["/with-rewrite", "/with-rewrite/:slug"];
 
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
   async rewrites() {
     return {
       afterFiles: rewriteRoutes.map((route) => {
@@ -11,9 +10,9 @@ module.exports = {
           source: route,
           has: [
             {
-              type: 'header',
-              key: 'accept-language',
-              value: '(?<language>.*)',
+              type: "cookie",
+              key: "language",
+              value: "(?<language>.*)",
             },
           ],
           destination: `/language/:language${route}`,
@@ -21,4 +20,6 @@ module.exports = {
       }),
     };
   },
-}
+};
+
+module.exports = nextConfig;

@@ -1,5 +1,6 @@
 {
-  "name": "nextjs-prefetch-with-rewrite",
+  "name": "nextjs-prefetch-with-rewrite-cookie-host",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,12 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.0.4",
+    "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "7",
-    "eslint-config-next": "12.0.4"
+    "eslint": "8.10.0",
+    "eslint-config-next": "12.1.0"
   }
 }
